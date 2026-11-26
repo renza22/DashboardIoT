@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    color: #1e293b;
+    background: #cdd5db;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .card {
+    border: 1px solid rgb(164 181 196 / 0.48);
+    border-radius: 1rem;
+    background: #f1eeea;
+    box-shadow:
+      0 1px 2px rgb(7 23 57 / 0.04),
+      0 9px 24px rgb(7 23 57 / 0.055);
+  }
+
+  .section-title {
+    color: #0f172a;
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+  }
+
+  .status-safe {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    background: #ecfdf5;
+    padding: 0.25rem 0.625rem;
+    color: #059669;
+    font-size: 0.5625rem;
+    font-weight: 800;
+  }
+}
+
+@keyframes water-drift {
+  from { transform: translateX(-18%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-page {
+  animation: page-enter 240ms ease-out;
+}
+
+.dashboard-main .text-slate-400 {
+  color: #667085;
+}
+
+.dashboard-main .text-slate-300 {
+  color: #7b8794;
+}
+
+.dashboard-main .dark-panel .text-slate-400 {
+  color: #a4b5c4;
+}
+
+.dashboard-main .dark-panel .text-slate-300 {
+  color: #cdd5db;
+}
+
+@media (min-width: 1120px) {
+  .overview-metrics {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.wave {
+  position: absolute;
+  top: -8px;
+  left: -15%;
+  width: 130%;
+  height: 16px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.3);
+  animation: water-drift 3s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave,
+  .animate-page {
+    animation: none;
+  }
+}

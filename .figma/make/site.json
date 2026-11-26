@@ -1,0 +1,10 @@
+{
+  "description": "Dashboard untuk memantau dan mengelola perangkat IoT, membantu pengguna melihat status perangkat dan data operasional dalam satu tempat.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
